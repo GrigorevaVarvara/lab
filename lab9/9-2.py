@@ -1,5 +1,5 @@
 from PIL import Image
-image = Image.open('cat.jpg')
+image = Image.open('lab9/cat.jpg')
 
 res_img = image.reduce(2)
 res_img.save('lab9/red_cat.jpg')
