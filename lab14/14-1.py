@@ -14,8 +14,14 @@ class Restaurant:
         self.rating = new_rating
         return f"{self.restaurant_name} - {self.cuisine_type} - {self.rating}"
 
-newRestaurant = Restaurant('Вкусно и не грустно','грузинская',5)
-print(newRestaurant.restaurant_name)
-print(newRestaurant.cuisine_type)
-print(newRestaurant.describe_restaurant())
-print(newRestaurant.new_rating(4))
+class IceCreamStand(Restaurant):
+    def __init__(self, restaurant_name, rating, flavors):
+        super().__init__(restaurant_name, "мороженое", rating)
+        self.flavors = flavors
+
+    def display_flavors(self):
+        return f"{', '.join(self.flavors)}"
+    
+stand = IceCreamStand("Мозг замерз", 4.8, ["ваниль", "шоколад", "клубника"])
+print(stand.describe_restaurant())
+print(stand.display_flavors())
